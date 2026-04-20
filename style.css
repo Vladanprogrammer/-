@@ -1,0 +1,91 @@
+html{
+    background-color: #ffffff;
+    font-family: 'Manrope'; font-weight: normal;
+}
+
+.rectangle{
+    background-color: #B6B0B0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger{
+    display: flex;
+    align-items: left;
+    font-size: 30px;
+    padding: 0 0 0 50px;
+}
+
+.logo{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 240;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #5C5A5A;
+    height: 40px;
+    width: 40px;
+    
+}
+
+.guest{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 0 50px;
+}
+
+header{
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+/*main*/
+
+.recent-discussions{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.post-item{
+    display: grid;
+    grid-template-columns: 250px auto; 
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+}
+
+.start{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user{
+    margin-top: -50px;
+}
+
+.name-1, .device-1{
+    margin: 0;
+}
+
+.device-1{
+    color: #2137DC;
+}
+
+p {
+    clear: both;
+    margin-bottom: -15px;
+    font-size: 20px;
+}
+
+time {
+    display: block;
+    margin-top: -60px;
+}
