@@ -12,22 +12,23 @@ html{
 
 .hamburger{
     display: flex;
-    align-items: left;
-    font-size: 30px;
-    padding: 0 0 0 50px;
+    align-items: flex-start;
+    font-size: 50px;
+    padding: 0px 0px 20px 50px;
 }
 
 .logo{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 240;
+    font-weight: 140;
+    font-size: 24px;
     font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: #5C5A5A;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     
 }
 
@@ -43,19 +44,29 @@ header{
     font-weight: bold;
     font-size: 40px;
     text-align: center;
+    padding-bottom: 110px;
 }
 /*main*/
 
 .recent-discussions{
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-left: calc(50vw - 450px); 
+    padding-right: 20px;
+}
+
+.head-discussions{
+    font: inherit;
+    font-size: 40px;
+    padding-left: 50px;
+    gap: 40px;
 }
 
 .post-item{
-    display: grid;
-    grid-template-columns: 250px auto; 
-    align-items: flex-start;
+    display: flex;
+    align-self: flex-end;
+    max-width: 1200px;
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #000;
@@ -64,29 +75,64 @@ header{
 .start{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    margin: 0px 60px 30px 0px;
+}
+
+.svg{
+    height: 100px;
+    padding-left: 1px;
 }
 
 .user{
-    margin-top: -50px;
+    margin-top: -45px;
+    
 }
 
 .name-1, .device-1{
+    font: inherit;
+    font-size: 20px;
     margin: 0;
 }
 
 .device-1{
+    white-space: nowrap;
     color: #2137DC;
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex-grow: 1;
+}
+
 .content-1 {
+    white-space: normal;
     margin-top: 0;
     font-size: 20px;
 }
 
-
 time {
-    float: right;
-    margin-left: 20px;
+    align-self: flex-end;
     margin-bottom: 5px;
+}
+
+.answers{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-btn{
+    color: #2137DC;
+    background: none;
+    padding: 0;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.answer-1{
+    text-decoration: none;
+    color: #2137DC;
 }
