@@ -145,3 +145,46 @@ time {
     text-decoration: none;
     color: #2137DC;
 }
+
+.latest-news{
+    display: flex;
+    font: inherit;
+    font-size: 40px;
+    padding-left: 440px;
+}
+
+.main-news{
+    display: grid;
+    justify-content: center;
+}
+
+.mn-news{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    grid-template-areas: 
+        "title tahoe"
+        "desc  tahoe"
+        "link  tahoe";
+    padding: 30px;
+    background-color: #F5F5F5;
+    max-width: 1000px;
+    border-radius: 5%;
+}
+.news-title{
+    grid-area: title;
+    margin: 0;
+}
+.news-desc{
+    grid-area: desc;
+    margin: 0;
+}
+.tahoe{
+   grid-area: tahoe;
+}
+.learn-more{
+    grid-area: link;
+    margin: 0;
+    color: #2137DC;
+}
