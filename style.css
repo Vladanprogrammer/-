@@ -65,18 +65,25 @@ header{
 
 .post-item{
     display: flex;
-    align-self: flex-end;
-    max-width: 1200px;
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #000;
+}
+.post-item-fat-inline{
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 3px solid #000;
 }
 
 .start{
     display: flex;
     align-items: center;
+    align-self: center;
     gap: 10px;
     margin: 0px 60px 30px 0px;
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .svg{
@@ -103,11 +110,13 @@ header{
 .content{
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
     min-width: 0;
     flex-grow: 1;
 }
 
 .content-1 {
+    justify-content: center;    
     white-space: normal;
     margin-top: 0;
     font-size: 20px;
