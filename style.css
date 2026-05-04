@@ -156,6 +156,8 @@ time {
 .main-news{
     display: grid;
     justify-content: center;
+    gap: 10%;
+    margin-bottom: 80px;
 }
 
 .mn-news{
@@ -187,4 +189,13 @@ time {
     grid-area: link;
     margin: 0;
     color: #2137DC;
+}
+
+.footer{
+    display: flex;
+    width: 100%;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    background-color: #B6B0B0;
 }
