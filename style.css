@@ -58,7 +58,6 @@ html{
 
 .head-discussions{
     font: inherit;
-    font-size: 40px;
     padding-left: 50px;
     gap: 40px;
 }
@@ -175,6 +174,8 @@ time {
 }
 .news-title{
     grid-area: title;
+    font-weight: bold;
+    font-size: 24px;
     margin: 0;
 }
 .news-desc{
@@ -220,11 +221,11 @@ time {
     .main-general{
          font-weight: normal;
          font-size: 30px;
+         padding-bottom: 40px;
     }
 
     .recent-discussions {
         padding: 0;
-        
     }
 
 .head-discussions, .latest-news {
@@ -233,9 +234,10 @@ time {
         text-align: left;
     }
 
-    .post-item{
+    .post-item, .post-item-fat-inline{
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
+        padding: 0;
     }
 
     .start{
@@ -244,7 +246,7 @@ time {
         align-items: center; 
         gap: 15px; 
         width: 100%; 
-        padding: 10px 0 0 50px; 
+        margin: 0;
     }
 
     .user{
@@ -292,6 +294,11 @@ time {
     justify-self: end;
     }
 
+    .main-news{
+        gap: 70px;
+        margin: 0;
+    }
+
     .mn-news {
         grid-template-columns: 1fr; 
         grid-template-areas: 
@@ -301,8 +308,15 @@ time {
             "link";
         padding: 15px;
     }
+    .learn-more{
+        justify-self: end;
+    }
 .tahoe {
         width: 100%;
         height: auto;
     }
+}
+
+.footer{
+   margin-top: 50px ;
 }
