@@ -3,6 +3,57 @@ html{
     font-family: 'Manrope'; font-weight: normal;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+.menu.active {
+    left: 0;
+}
+.ham-menu{
+    display: flex;
+    justify-content: space-between;
+    max-height: 80px;
+    background-color: #B6B0B0;
+}
+.text-menu{
+    display: flex;
+    font-size: 32px;
+    margin: 0;
+    padding: 15px 55px 0 0 ;
+}
+.discussion-topic{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    gap: 20px;
+    margin-top: 90px;
+}
+.discussion-topic p {
+    margin: 0;
+    font-size: 24px;
+}
+.footer-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 15px;
+    margin-top: 300px;
+    margin-bottom: 38px;
+}
+.footer-text p{
+    margin: 0;
+     font-size: 24px;
+}
 .rectangle{
     background-color: #B6B0B0;
     display: flex;
@@ -58,6 +109,7 @@ html{
 
 .head-discussions{
     font: inherit;
+    font-size: 40px;
     padding-left: 50px;
     gap: 40px;
 }
