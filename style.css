@@ -2,7 +2,6 @@ html{
     background-color: #ffffff;
     font-family: 'Manrope'; font-weight: normal;
 }
-
 .menu{
     display: flex;
     flex-direction: column;
@@ -15,6 +14,7 @@ html{
     background-color: #ffffff;
     z-index: 1000;
     transition: left 0.3s ease;
+    font: inherit;
 }
 .menu.active {
     left: 0;
@@ -50,9 +50,11 @@ html{
     margin-top: 300px;
     margin-bottom: 38px;
 }
-.footer-text p{
+.footer-text p, a{
     margin: 0;
      font-size: 24px;
+     color: inherit;
+     text-decoration: none;
 }
 .rectangle{
     background-color: #B6B0B0;
@@ -372,3 +374,12 @@ time {
 .footer{
    margin-top: 50px ;
 }
+
+/* feedback */
+
+ .feedback p{
+    padding: 5px 0 0 30px;
+    font: inherit;
+    font-weight: bold;
+    font-size: 36px;
+ }
