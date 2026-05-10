@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html{
     background-color: #ffffff;
     font-family: 'Manrope'; font-weight: normal;
@@ -11,7 +16,6 @@ html{
     top: 0;
     left: -100%;
     height: 100vh;
-    background-color: #ffffff;
     z-index: 1000;
     transition: left 0.3s ease;
     font: inherit;
@@ -23,7 +27,6 @@ html{
     display: flex;
     justify-content: space-between;
     max-height: 80px;
-    background-color: #B6B0B0;
 }
 .text-menu{
     display: flex;
@@ -47,7 +50,8 @@ html{
     flex-direction: column;
     gap: 20px;
     padding-left: 15px;
-    margin-top: 300px;
+    padding-bottom: 150px;
+    margin-top: 200px;
     margin-bottom: 38px;
 }
 .footer-text p, a{
@@ -68,6 +72,7 @@ html{
     align-items: flex-start;
     font-size: 50px;
     padding: 0px 0px 20px 50px;
+    cursor: pointer;
 }
 
 .logo{
