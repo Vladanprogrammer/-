@@ -23,6 +23,10 @@ html{
 .menu.active {
     left: 0;
 }
+.menu-active-link {
+    font-weight: bold;
+    color: #2137DC !important;
+}
 .ham-menu{
     display: flex;
     background-color: #B6B0B0;
@@ -106,12 +110,14 @@ html{
     right: -100%;
     width: 350px;
     height: 40vh;
-    border-radius: 5%;
+    border-radius: 7%;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: right 0.3s ease;
+    overflow: hidden;
+    border: solid 3px black;
 }
 .logo-departing.active {
     right: 0;
@@ -119,7 +125,7 @@ html{
 
 .top-ghost {
     display: grid;
-    width: 350px;
+    width: 100%;
     grid-template-areas:
      "rain log"
      "reg ghost";
@@ -136,7 +142,9 @@ html{
     align-self: center;
     font-size: 15px;
     position: relative;
-    bottom: 10px;
+    bottom: 2px;
+    left: 10px;
+    color: #2137DC;
 }
 
 .reg {
@@ -145,7 +153,9 @@ html{
     align-self: center;
     font-size: 15px;
     position: relative;
-    bottom: 40px;
+    bottom: 18px;
+    left: 10px;
+    color: #2137DC;
 }
 
 .ghost-log {
@@ -175,10 +185,19 @@ html{
     flex-direction: column;
     justify-content: center;
     height: 300px;
-    width: 350px;
-    gap: 10px;
+    width: 100%;
+    gap: 5px;
     background-color: #C0BBBB;
     border-radius: 0 0 20px 20px;
+}
+.privat{
+    font: inherit;
+    font-size: 20px;
+    margin: 40px 30px 0 30px;
+}
+.setting-ac{
+    font: inherit;
+    margin: 50px 30px 12px 30px;
 }
 /*main*/
 
@@ -303,7 +322,7 @@ time {
     margin-bottom: 80px;
 }
 
-.mn-news{
+.mn-news {
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto auto auto;
@@ -314,8 +333,8 @@ time {
         "link  tahoe";
     padding: 30px;
     background-color: #F5F5F5;
-    max-width: 1000px;
-    border-radius: 5%;
+    border-radius: 20px; /* Трохи згладив кути замість 5% */
+    width: 100%; /* Займає всю доступну ширину лівої колонки */
 }
 .news-title{
     grid-area: title;
@@ -327,9 +346,14 @@ time {
     grid-area: desc;
     margin: 0;
 }
-.tahoe{
-   grid-area: tahoe;
-}
+.tahoe {
+    grid-area: tahoe;
+    width: 100%;
+    height: 100%;
+    max-height: 220px; /* Жорстко обмежуємо висоту для ідеальної рівності */
+    object-fit: cover; /* Алгоритм зріже зайві краї картинки, не сплющуючи її */
+    border-radius: 10px; /* Акуратні кути всередині сірого блоку */
+    }
 .learn-more{
     grid-area: link;
     cursor: pointer;
@@ -461,10 +485,6 @@ time {
     .learn-more{
         justify-self: end;
     }
-.tahoe {
-        width: 100%;
-        height: auto;
-    }
 }
 
 .footer{
@@ -496,4 +516,312 @@ time {
     height: 140px;
     margin-top: auto;
     background-color: #B6B0B0;
+}
+
+/* news */
+
+.news-page-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.news-layout {
+    display: grid;
+    /* Створюємо 3 колонки: 1fr (порожнеча зліва), 750px (новини по центру), 1fr (місце для сайдбару справа) */
+    grid-template-columns: 1fr 750px 1fr;
+    gap: 40px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 80px;
+}
+
+.news-feed {
+    grid-column: 2; /* Примусово ставимо стрічку новин у 2-гу (центральну) колонку */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.news-feed-title {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.back-to-top {
+    position: fixed; /* Відриваємо кнопку від сторінки */
+    bottom: 50px; /* Відступ знизу */
+    right: 80px; /* Відступ справа (буде стояти під колонкою сортування) */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 900; /* Щоб кнопка завжди була поверх тексту новин */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+.back-to-top:hover {
+    background-color: #B6B0B0; /* При наведенні стає сірою */
+}
+
+
+.see-more-btn {
+    align-self: center;
+    padding: 15px 40px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    background-color: transparent;
+    font: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+/* Права частина: Сайдбар (бокова панель) */
+.news-sidebar {
+    grid-column: 3; /* Примусово ставимо сайдбар у 3-тю (праву) колонку */
+    width: 100%;
+    max-width: 250px; /* Обмежуємо ширину, щоб він не розтягувався на весь екран */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 60px;
+    justify-self: center; /* Центруємо сайдбар всередині його правої зони, щоб не прилипав до краю екрана */
+}
+
+.category-box {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 15px 20px;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.category-box-title {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.category-list {
+    list-style: none; /* Прибирає стандартні крапки HTML-списку */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+}
+.category-list li {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Плавна зміна кольору */
+}
+.category-list li:hover {
+    background-color: #B6B0B0; /* Сірий колір, як у твоєму дизайні */
+    color: #000;
+}
+
+.sort-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sort-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sort-select {
+    width: 100%; /* Розтягує селекти на всю ширину бокової панелі */
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .news-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-sidebar {
+        max-width: 400px;
+        justify-self: auto;
+    }
+    .back-to-top {
+        right: 20px; /* На телефоні ближче до краю */
+        bottom: 20px;
+    }
+}
+
+/* --- СТИЛІ ДЛЯ СТОРІНКИ ОБГОВОРЕНЬ (Всі обговорення) --- */
+
+.all-discussions-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Панель пошуку і фільтрів */
+.controls-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 25px; /* Закруглена капсула пошуку */
+    padding: 10px 20px;
+    width: 400px;
+}
+
+.search-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font: inherit;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.filters-container {
+    display: flex;
+    gap: 15px;
+    position: relative; /* Щоб попап позиціонувався відносно цього блоку */
+}
+
+.filter-btn, .filter-select {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 8px 15px;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Випадаюче вікно "Момент створення" */
+.time-filter-wrapper {
+    position: relative;
+}
+
+.time-popup {
+    display: none; /* Сховане за замовчуванням */
+    position: absolute;
+    top: 45px;
+    right: 0; /* Притискаємо до правого краю кнопки */
+    width: 200px;
+    background-color: #F5F5F5;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+    z-index: 100;
+}
+
+.time-popup.show {
+    display: block; /* Клас, який додає JS для показу */
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.popup-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-list li {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.popup-list li:hover {
+    color: #2137DC; /* Підсвічування при наведенні */
+}
+
+/* Сама стрічка */
+.discussions-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000; /* Сама верхня лінія над постами */
+}
+
+/* Пагінація (номери сторінок внизу) */
+.pagination {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.page-link {
+    font-size: 16px;
+    color: #2137DC;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.page-link:hover {
+    transform: scale(1.2); /* Легке збільшення цифри при наведенні */
+}
+
+.page-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #2137DC; /* Підкреслення активної сторінки */
+}
+
+/* Адаптивність */
+@media (max-width: 800px) {
+    .controls-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .search-container {
+        width: 100%;
+    }
+    .filters-container {
+        width: 100%;
+        justify-content: space-between;
+    }
 }

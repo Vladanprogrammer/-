@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/Users/vladshershun/Documents/Фото/Скріни/Курсова/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Обговорення Windows</title>
+</head>
+<body>
+    <nav class="menu">
+        <div class="ham-menu">
+            <span class="hamburger">☰</span>
+            <p class="text-menu">Меню</p>
+        </div>
+        <div class="discussion-topic">
+            <p><a href="main.html">Головна сторінка</a></p>
+            <p><a href="macos0.html">Обговорення MacOS</a></p>
+            <p><a href="linux0.html">Обговорення Linux</a></p>
+            <p><a href="windows0.html">Обговорення Windows</a></p>
+            <p><a href="news.html">Новини</a></p>
+        </div>
+        <div class="footer-text">
+            <p>Налаштування</p>
+            <p><a href="feedback.html">Звʼязок</a></p>
+        </div>
+    </nav>
+
+    <div class="rectangle">
+        <div class="hamburger">☰</div>
+        <div class="logo"><span>M&L</span></div>
+        <div><img class="account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар"></div>
+    </div>
+
+    <nav class="logo-departing">
+        <div class="top-ghost">
+            <button class="rain">Увійти</button>
+            <button class="reg">Зареєструватись</button>
+            <img class="ghost-log account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
+            <p class="ghost">Гість</p>
+        </div>
+        <div class="bottom-ghost">
+            <button class="privat">Особисті повідомлення</button>
+            <button class="setting-ac">Налаштування акаунта</button>
+        </div>
+    </nav>
+
+    <h1 class="news-page-title">Всі обговорення Windows</h1>
+
+    <main class="all-discussions-layout">
+        
+        <div class="controls-bar">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Пошук по Windows">
+            </div>
+            
+            <div class="filters-container">
+                <div class="time-filter-wrapper">
+                    <button class="filter-btn" id="time-filter-btn">Момент створення</button>
+                    <div class="time-popup" id="time-popup">
+                        <p class="popup-title">Момент створення</p>
+                        <ul class="popup-list">
+                            <li>Сьогодні</li>
+                            <li>Вчора</li>
+                            <li>Позавчора</li>
+                        </ul>
+                    </div>
+                </div>
+                <select class="filter-select">
+                    <option>За популярністю</option>
+                    <option>За датою</option>
+                    <option>За відповідями</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="discussions-list">
+            <article class="post-item">
+                <div class="start">
+                    <img class="svg" src="Group 4.svg" alt="Аватар">
+                    <div class="user">
+                        <h3 class="name-1">WinMaster</h3>
+                        <h3 class="device-1">Custom PC Build</h3>
+                    </div>
+                </div>
+                <div class="content">
+                    <time>13.05.2026</time>
+                    <p class="content-1">Як повністю вирізати Copilot та Recall з останнього оновлення Windows 11? Звичайне відключення в реєстрі вже не допомагає, процеси все одно висять у фоні. Шукаю надійні PowerShell скрипти.</p>
+                    <div class="answers">
+                        <button class="reply-btn">Відповідей:42</button>
+                        <a href="#" class="answer-1">Відповісти</a> 
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-item">
+                <div class="start">
+                    <img class="svg" src="Group 4.svg" alt="Аватар">
+                    <div class="user">
+                        <h3 class="name-1">ToxicMid</h3>
+                        <h3 class="device-1">Lenovo Legion 5</h3>
+                    </div>
+                </div>
+                <div class="content">
+                    <time>11.05.2026</time>
+                    <p class="content-1">Після вчорашнього апдейту Windows почалися жорсткі мікрофрізи в Dota 2 та League of Legends. Драйвера на відяху перевстановлював через DDU, не помогло. У когось ще є така проблема?</p>
+                    <div class="answers">
+                        <button class="reply-btn">Відповідей:11</button>
+                        <a href="#" class="answer-1">Відповісти</a> 
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-item">
+                <div class="start">
+                    <img class="svg" src="Group 4.svg" alt="Аватар">
+                    <div class="user">
+                        <h3 class="name-1">FrontEnd_Guy</h3>
+                        <h3 class="device-1">Dell XPS 15</h3>
+                    </div>
+                </div>
+                <div class="content">
+                    <time>10.05.2026</time>
+                    <p class="content-1">WSL2 став споживати неадекватно багато оперативної пам'яті (близько 8ГБ) просто при запущеному Node.js сервері. Як правильно налаштувати .wslconfig щоб обмежити його апетити?</p>
+                    <div class="answers">
+                        <button class="reply-btn">Відповідей:5</button>
+                        <a href="#" class="answer-1">Відповісти</a> 
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+            <a href="windows0.html" class="page-link active">1</a>
+            <a href="windows1.html" class="page-link">2</a>
+        </div>
+        
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">ᐱ</button>
+    </main>
+
+    <footer class="footer">
+        <p class="text-footer">M&L-2026</p>
+    </footer>
+
+    <script src="global.js"></script>
+</body>
+</html>

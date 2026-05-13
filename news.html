@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/Users/vladshershun/Documents/Фото/Скріни/Курсова/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Новини</title>
+</head>
+<body>
+    <nav class="menu">
+        <div class="ham-menu">
+            <span class="hamburger">☰</span>
+            <p class="text-menu">Меню</p>
+        </div>
+        <div class="discussion-topic">
+            <p><a href="main.html">Головна сторінка</a></p>
+            <p><a href="macos0.html">Обговорення MacOS</a></p>
+            <p><a href="linux0.html">Обговорення Linux</a></p>
+            <p><a href="windows0.html">Обговорення Windows</a></p>
+            <p><a href="news.html">Новини</a></p>
+        </div>
+        <div class="footer-text">
+            <p>Налаштування</p>
+            <p><a href="feedback.html">Звʼязок</a></p>
+        </div>
+    </nav>
+
+    <div class="rectangle">
+        <div class="hamburger">☰</div>
+        <div class="logo">
+            <span>M&L</span>
+        </div>
+        <div>
+            <img class="account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
+        </div>
+    </div>
+
+    <nav class="logo-departing">
+        <div class="top-ghost">
+            <button class="rain">Увійти</button>
+            <button class="reg">Зареєструватись</button>
+            <img class="ghost-log account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
+            <p class="ghost">Гість</p>
+        </div>
+        <div class="bottom-ghost">
+            <button class="privat">Особисті повідомлення</button>
+            <button class="setting-ac">Налаштування акаунта</button>
+        </div>
+    </nav>
+
+    <h1 class="news-page-title">Новини</h1>
+
+    <main class="news-layout">
+        <section class="news-feed">
+            <h2 class="news-feed-title">Останні новини</h2>
+            
+            <div class="mn-news">
+                <p class="news-title">Вихід новой MacOS Tahoe 26.3</p>
+                <p class="news-desc">Виправлення та безпека: Оновлення 26.3 зосереджене на важливих виправленнях...</p>
+                <p class="learn-more">Детальніше</p>
+                <img class="tahoe" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Tahoe 1.png" alt="Tahoe">
+            </div>
+
+            <div class="mn-news">
+                <p class="news-title">Оновлено ядро Linux</p>
+                <p class="news-desc">Стабільна версія 6.19: Вийшла 8 лютого 2026 року. Вона принесла функцію Live Update Orchestrator яка дозволяє оновлювати ядро ...</p>
+                <p class="learn-more">Детальніше</p>
+                <img class="tahoe" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Linux.png" alt="Linux">
+            </div>
+
+            <div class="mn-news">
+                <p class="news-title">Оновлення Windows 11: Recall тепер працює локально</p>
+                <p class="news-desc">Microsoft випустила масштабний патч для функції Recall, яка тепер обробляє всі дані виключно на NPU вашого комп'ютера. Це дозволяє шукати будь-яку дію, яку ви робили на ПК місяць тому, без ризику витоку даних у хмару...</p>
+                <p class="learn-more">Детальніше</p>
+                <img class="tahoe" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Windows Recall.webp" alt="Windows 11">
+            </div>
+
+            <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">ᐱ</button>
+            <button class="see-more-btn">Побачити більше новин ᐯ</button>
+        </section>
+
+        <aside class="news-sidebar">
+            <div class="category-box">
+                <p class="category-box-title">Новини з світу</p>
+                <ul class="category-list">
+                    <li>MacOS</li>
+                    <li>Linux</li>
+                    <li>Windows</li>
+                </ul>
+            </div>
+
+            <div class="sort-section">
+                <p class="sort-title">Сортування новин:</p>
+                <select class="sort-select">
+                    <option>За популярністю</option>
+                    <option>За датою</option>
+                </select>
+                <select class="sort-select">
+                    <option>За користю</option>
+                    <option>За обговоренням</option>
+                </select>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p class="text-footer">M&L-2026</p>
+    </footer>
+
+    <script src="global.js"></script>
+</body>
+</html>
