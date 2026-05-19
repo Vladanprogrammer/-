@@ -46,3 +46,34 @@ menuLinks.forEach(function(link) {
         link.classList.add('menu-active-link');
     }
 });
+
+const posts = document.querySelectorAll('.post-item');
+
+for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    const replyBtn = post.querySelector('.reply-btn');
+    const answerLink = post.querySelector('.answer-1');
+    const commentsSection = post.querySelector('.full');
+
+    if (replyBtn && commentsSection) {
+        replyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (commentsSection.classList.contains('open')) {
+                commentsSection.classList.remove('open');
+            } else {
+                commentsSection.classList.add('open');
+            }
+        });
+    }
+
+    if (answerLink && commentsSection) {
+        answerLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (commentsSection.classList.contains('open')) {
+                commentsSection.classList.remove('open');
+            } else {
+                commentsSection.classList.add('open');
+            }
+        });
+    }
+}
