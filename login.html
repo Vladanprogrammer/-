@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <title>Зворотній звʼязок</title>
+    <title>Вхід в акаунт</title>
 </head>
-<body class="feedback-body">
-     <nav class="menu">
+<body>
+    <nav class="menu">
         <div class="ham-menu">
             <span class="hamburger">☰</span>
             <p class="text-menu">Меню</p>
@@ -28,36 +28,52 @@
             <p><a href="feedback.html">Звʼязок</a></p>
         </div>
     </nav>
+
     <div class="rectangle">
-        <div class="hamburger">
-                ☰
-        </div>
+        <div class="hamburger">☰</div>
         <div class="logo">
             <a href="main.html"><span>M&L</span></a>
         </div>
-        <div class="login">
-            <img class="account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png">
+        <div>
+            <img class="account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
         </div>
     </div>
+
     <nav class="logo-departing">
         <div class="top-ghost">
-         <a href="login.html"><button class="rain">Увійти</button></a>
-        <a href="reg.html"><button class="reg">Зареєструватись</button></a>
-        <img class="ghost-log account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png">
-        <p class="ghost">Гість</p>
+            <button class="rain" onclick="window.location.href='login.html'">Увійти</button>
+            <button class="reg" onclick="window.location.href='reg.html'">Зареєструватись</button>
+            <img class="ghost-log account-trigger" src="/Users/vladshershun/Documents/Фото/Скріни/Курсова/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
+            <p class="ghost">Гість</p>
         </div>
         <div class="bottom-ghost">
             <button class="privat">Особисті повідомлення</button>
             <button class="setting-ac">Налаштування акаунта</button>
         </div>
     </nav>
-    <div class="feedback">
-        <p>Звʼязок</p>
-        <p>vlad.shershun.02@gmail.com</p>
-    </div>
-    <footer class="footer-feedback">
+
+    <h1 class="news-page-title">Вхід в M&L</h1>
+
+    <main class="auth-layout">
+        <div class="auth-container">
+            <form class="auth-form">
+                <div class="form-group">
+                    <label class="form-label">Електронна пошта</label>
+                    <input type="email" class="form-input" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Пароль</label>
+                    <input type="password" class="form-input" placeholder="Введіть ваш пароль" required>
+                </div>
+                <button type="submit" class="auth-submit-btn" onclick="window.location.href='account.html'">Увійти</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
         <p class="text-footer">M&L-2026</p>
     </footer>
+
     <script src="global.js"></script>
 </body>
 </html>
