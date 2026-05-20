@@ -57,12 +57,20 @@
     <main class="all-discussions-layout">
         
         <div class="controls-bar">
-            <div class="search-container">
-                <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" placeholder="Пошук Обговорень">
-            </div>
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Пошук Обговорень">
+    </div>
+    
+    <button class="plus">+</button>
+        </div>
+
+<div class="create-post-box">
+    <textarea class="new-post-input form-input" placeholder="Про що хочете запитати?"></textarea>
+    <button type="button" class="auth-submit-btn publish-post-btn">Опублікувати пост</button>
+</div>
             
-            <div class="filters-container">
+                        <div class="filters-container">
                 <div class="time-filter-wrapper">
                     <button class="filter-btn" id="time-filter-btn">Момент створення</button>
                     <div class="time-popup" id="time-popup">
@@ -80,8 +88,6 @@
                     <option>За відповідями</option>
                 </select>
             </div>
-        </div>
-
         <div class="discussions-list">
             
             <article class="post-item">
@@ -265,7 +271,8 @@
     <footer class="footer">
         <p class="text-footer">M&L-2026</p>
     </footer>
-    <script src="sort.js"></script>
     <script src="global.js"></script>
+    <script src="post-creator.js"></script>
+    <script src="sort.js"></script>
 </body>
 </html>

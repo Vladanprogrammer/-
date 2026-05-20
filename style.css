@@ -199,7 +199,6 @@ html{
     font: inherit;
     margin: 50px 30px 12px 30px;
 }
-/*main*/
 
 .main-general{
     margin-top: 40px;
@@ -215,6 +214,43 @@ html{
     margin: 0 auto;
     padding-left: calc(50vw - 450px); 
     padding-right: 20px;
+}
+.head_plus{
+    display: flex;
+    justify-content: space-between;
+}
+.plus{
+    border-radius: 15px;
+    width: 40px;
+    height: 30px;
+}
+.create-post-box {
+    display: none;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.create-post-box.show {
+    display: block;
+}
+
+.new-post-input {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 15px;
+    resize: vertical;
+    padding: 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.publish-post-btn {
+    width: 100%;
+}
+
+.reply-input {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .head-discussions{
@@ -249,6 +285,7 @@ html{
     align-items: center;
     align-self: center;
     margin: 0px 30px 0px 0px;
+    padding-top: 20px;
     width: 160px;
     flex-shrink: 0;
 }
@@ -306,6 +343,13 @@ time {
 .answers{
     display: flex;
     justify-content: space-between;
+}
+
+.full .content .answers,
+.custom-created-post .content .answers {
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 100%;
 }
 
 .reply-btn{
@@ -402,8 +446,8 @@ time {
         "link  tahoe";
     padding: 30px;
     background-color: #F5F5F5;
-    border-radius: 20px; /* Трохи згладив кути замість 5% */
-    width: 100%; /* Займає всю доступну ширину лівої колонки */
+    border-radius: 20px;
+    width: 100%;
 }
 .news-title{
     grid-area: title;
@@ -419,9 +463,9 @@ time {
     grid-area: tahoe;
     width: 100%;
     height: 100%;
-    max-height: 220px; /* Жорстко обмежуємо висоту для ідеальної рівності */
-    object-fit: cover; /* Алгоритм зріже зайві краї картинки, не сплющуючи її */
-    border-radius: 10px; /* Акуратні кути всередині сірого блоку */
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
     }
 .learn-more{
     grid-area: link;
@@ -443,7 +487,6 @@ time {
     font-weight: 600;
 }
 
-/* Mobile */
 @media (max-width: 1000px) {
     .logo{
         font-size: 20px;
@@ -560,7 +603,6 @@ time {
    margin-top: 50px ;
 }
 
-/* feedback */
 .feedback-body{
     display: flex;
     flex-direction: column;
@@ -587,8 +629,6 @@ time {
     background-color: #B6B0B0;
 }
 
-/* news */
-
 .news-page-title {
     text-align: center;
     font-size: 40px;
@@ -598,7 +638,6 @@ time {
 
 .news-layout {
     display: grid;
-    /* Створюємо 3 колонки: 1fr (порожнеча зліва), 750px (новини по центру), 1fr (місце для сайдбару справа) */
     grid-template-columns: 1fr 750px 1fr;
     gap: 40px;
     margin: 0 auto;
@@ -607,7 +646,7 @@ time {
 }
 
 .news-feed {
-    grid-column: 2; /* Примусово ставимо стрічку новин у 2-гу (центральну) колонку */
+    grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -621,9 +660,9 @@ time {
 }
 
 .back-to-top {
-    position: fixed; /* Відриваємо кнопку від сторінки */
-    bottom: 50px; /* Відступ знизу */
-    right: 80px; /* Відступ справа (буде стояти під колонкою сортування) */
+    position: fixed;
+    bottom: 50px;
+    right: 80px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -631,7 +670,7 @@ time {
     background-color: #ffffff;
     cursor: pointer;
     font-size: 24px;
-    z-index: 900; /* Щоб кнопка завжди була поверх тексту новин */
+    z-index: 900;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -640,7 +679,7 @@ time {
     transition: all 0.3s ease;
 }
 .back-to-top:hover {
-    background-color: #B6B0B0; /* При наведенні стає сірою */
+    background-color: #B6B0B0;
 }
 .back-to-top.show {
     opacity: 1;
@@ -662,16 +701,15 @@ time {
 }
 
 
-/* Права частина: Сайдбар (бокова панель) */
 .news-sidebar {
-    grid-column: 3; /* Примусово ставимо сайдбар у 3-тю (праву) колонку */
+    grid-column: 3;
     width: 100%;
-    max-width: 250px; /* Обмежуємо ширину, щоб він не розтягувався на весь екран */
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding-top: 60px;
-    justify-self: center; /* Центруємо сайдбар всередині його правої зони, щоб не прилипав до краю екрана */
+    justify-self: center;
 }
 
 .category-box {
@@ -689,7 +727,7 @@ time {
 }
 
 .category-list {
-    list-style: none; /* Прибирає стандартні крапки HTML-списку */
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -704,10 +742,10 @@ time {
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.2s ease; /* Плавна зміна кольору */
+    transition: all 0.2s ease;
 }
 .category-list li:hover {
-    background-color: #B6B0B0; /* Сірий колір, як у твоєму дизайні */
+    background-color: #B6B0B0;
     color: #000;
 }
 
@@ -723,7 +761,7 @@ time {
 }
 
 .sort-select {
-    width: 100%; /* Розтягує селекти на всю ширину бокової панелі */
+    width: 100%;
     padding: 10px;
     border: 1px solid #000;
     border-radius: 5px;
@@ -744,12 +782,11 @@ time {
         justify-self: auto;
     }
     .back-to-top {
-        right: 20px; /* На телефоні ближче до краю */
+        right: 20px;
         bottom: 20px;
     }
 }
 
-/* --- СТИЛІ ДЛЯ СТОРІНКИ ОБГОВОРЕНЬ (Всі обговорення) --- */
 
 .all-discussions-layout {
     max-width: 1000px;
@@ -760,20 +797,55 @@ time {
     align-items: center;
 }
 
-/* Панель пошуку і фільтрів */
 .controls-bar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    flex-wrap: nowrap;
+}
+
+/* Робимо панель гнучкою, щоб елементи стояли в один ряд */
+.controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Відстань між пошуком і плюсом */
+    margin-bottom: 20px;
+}
+
+/* Пошук займає весь вільний простір */
+.search-container {
+    flex-grow: 1;
+}
+
+/* Фіксуємо кнопку +, щоб вона не зжималась і не падала вниз */
+.plus {
+    flex-shrink: 0; 
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Робить її круглою, якщо треба квадратну - прибери це */
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.plus:hover {
+    background-color: #333333;
 }
 
 .search-container {
     display: flex;
     align-items: center;
     border: 1px solid #000;
-    border-radius: 25px; /* Закруглена капсула пошуку */
+    border-radius: 25px;
     padding: 10px 20px;
     width: 400px;
 }
@@ -795,7 +867,7 @@ time {
 .filters-container {
     display: flex;
     gap: 15px;
-    position: relative; /* Щоб попап позиціонувався відносно цього блоку */
+    position: relative;
 }
 
 .filter-btn, .filter-select {
@@ -808,16 +880,15 @@ time {
     cursor: pointer;
 }
 
-/* Випадаюче вікно "Момент створення" */
 .time-filter-wrapper {
     position: relative;
 }
 
 .time-popup {
-    display: none; /* Сховане за замовчуванням */
+    display: none;
     position: absolute;
     top: 45px;
-    right: 0; /* Притискаємо до правого краю кнопки */
+    right: 0;
     width: 200px;
     background-color: #F5F5F5;
     border: 1px solid #000;
@@ -827,7 +898,7 @@ time {
 }
 
 .time-popup.show {
-    display: block; /* Клас, який додає JS для показу */
+    display: block;
 }
 
 .popup-title {
@@ -851,18 +922,16 @@ time {
 }
 
 .popup-list li:hover {
-    color: #2137DC; /* Підсвічування при наведенні */
+    color: #2137DC;
 }
 
-/* Сама стрічка */
 .discussions-list {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #000; /* Сама верхня лінія над постами */
+    border-top: 1px solid #000;
 }
 
-/* Пагінація (номери сторінок внизу) */
 .pagination {
     display: flex;
     gap: 20px;
@@ -878,15 +947,14 @@ time {
 }
 
 .page-link:hover {
-    transform: scale(1.2); /* Легке збільшення цифри при наведенні */
+    transform: scale(1.2);
 }
 
 .page-link.active {
     font-weight: bold;
-    border-bottom: 2px solid #2137DC; /* Підкреслення активної сторінки */
+    border-bottom: 2px solid #2137DC;
 }
 
-/* Адаптивність */
 @media (max-width: 800px) {
     .controls-bar {
         flex-direction: column;
