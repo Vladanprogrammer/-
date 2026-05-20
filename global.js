@@ -1,22 +1,7 @@
-const menu = document.querySelector('.menu');
-const hamburgers = document.querySelectorAll('.hamburger');
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+}
 
-hamburgers.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        if(menu) menu.classList.toggle('active');
-    });
-});
-
-const rightMenu = document.querySelector('.logo-departing');
-const accountButtons = document.querySelectorAll('.account-trigger');
-
-accountButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        if(rightMenu) rightMenu.classList.toggle('active');
-    });
-});
-
-// Безпечне читання з localStorage
 function safeJSONParse(key) {
     const data = localStorage.getItem(key);
     if (!data) return null;
@@ -28,50 +13,51 @@ function safeJSONParse(key) {
     }
 }
 
-// Оновлення інтерфейсу для авторизованого користувача
-function updateUIForLoggedInUser() {
-    const userData = safeJSONParse('currentUser');
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUserData = localStorage.getItem('currentUser');
+    const logoDeparting = document.querySelector('.logo-departing');
     
-    if (userData) {
-        const ghostText = document.querySelector('.ghost');
-        if (ghostText && userData.nickname) {
-            ghostText.innerText = userData.nickname;
-        }
+    if (currentUserData) {
+        const currentUser = JSON.parse(currentUserData);
+        
+        if (logoDeparting) {
+            logoDeparting.innerHTML = `
+                <div class="top-ghost">
+                    <button id="logout-btn" class="rain">Вийти з акаунта</button>
+                    <img class="ghost-log account-trigger" src="Group 4.svg" alt="">
+                    <p class="ghost">${currentUser.nickname}</p>
+                    <p class="device-text">${currentUser.device}</p>
+                </div>
+                <div class="bottom-ghost">
+                    <button class="privat">Особисті повідомлення</button>
+                    <button class="setting-ac" onclick="window.location.href='settings.html'">Налаштування акаунта</button>
+                </div>
+            `;
 
-        const loginBtn = document.querySelector('.rain');
-        const regBtn = document.querySelector('.reg');
-        if (loginBtn) loginBtn.style.display = 'none';
-        if (regBtn) regBtn.style.display = 'none';
-
-        const topGhost = document.querySelector('.top-ghost');
-        if (topGhost && !document.querySelector('.logout-btn')) {
-            const logoutBtn = document.createElement('button');
-            logoutBtn.className = 'logout-btn';
-            logoutBtn.innerText = 'Вийти з акаунта';
-            
-            logoutBtn.style.width = '100%';
-            logoutBtn.style.padding = '10px';
-            logoutBtn.style.marginTop = '15px';
-            logoutBtn.style.backgroundColor = '#000000';
-            logoutBtn.style.color = '#ffffff';
-            logoutBtn.style.border = '2px solid #000000';
-            logoutBtn.style.borderRadius = '30px';
-            logoutBtn.style.fontFamily = '"Manrope", sans-serif';
-            logoutBtn.style.fontWeight = '600';
-            logoutBtn.style.cursor = 'pointer';
-            logoutBtn.style.transition = 'all 0.2s ease';
-
-            logoutBtn.addEventListener('click', function() {
+            document.getElementById('logout-btn').addEventListener('click', function() {
                 localStorage.removeItem('currentUser');
                 window.location.reload(); 
             });
-
-            topGhost.appendChild(logoutBtn);
         }
     }
-}
 
-updateUIForLoggedInUser();
+    if (logoDeparting) {
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('account-trigger')) {
+                logoDeparting.classList.toggle('active');
+            }
+        });
+    }
+});
+
+const menu = document.querySelector('.menu');
+const hamburgers = document.querySelectorAll('.hamburger');
+
+hamburgers.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        if(menu) menu.classList.toggle('active');
+    });
+});
 
 const menuLinks = document.querySelectorAll('.menu a');
 const path = window.location.pathname;
@@ -141,11 +127,9 @@ discussionPosts.forEach(function(currentPost, i) {
         const savedComments = safeJSONParse(storageKey) || [];
         
         savedComments.forEach(function(commentItem) {
-            // Якщо це старий коментар (просто текст), ставимо час "Раніше"
             if (typeof commentItem === 'string') {
                 createCommentBox(commentItem, "Раніше", prepBox, inputBox);
             } else {
-                // Якщо це новий об'єкт, дістаємо і текст, і збережений час
                 createCommentBox(commentItem.text, commentItem.time, prepBox, inputBox);
             }
         });
@@ -154,24 +138,17 @@ discussionPosts.forEach(function(currentPost, i) {
             inputField.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter' && this.value.trim() !== '') {
                     const text = this.value.trim();
-                    
-                    // Створюємо дату і час
                     const now = new Date();
-                    
-                    // Додаємо нуль попереду, якщо число менше 10 (наприклад, 05 замість 5)
-                    const d = now.getDate() < 10 ? '0' + now.getDate() : now.getDate();
-                    const m = (now.getMonth() + 1) < 10 ? '0' + (now.getMonth() + 1) : now.getMonth() + 1;
+                    const d = String(now.getDate()).padStart(2, '0');
+                    const m = String(now.getMonth() + 1).padStart(2, '0');
                     const y = now.getFullYear();
-                    const h = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
-                    const min = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
-                    
-                    // Склеюємо у формат "20.05.2026 14:30"
-                    const timeString = d + '.' + m + '.' + y + ' ' + h + ':' + min;
+                    const h = String(now.getHours()).padStart(2, '0');
+                    const min = String(now.getMinutes()).padStart(2, '0');
+                    const timeString = `${d}.${m}.${y} ${h}:${min}`;
 
                     createCommentBox(text, timeString, prepBox, inputBox);
                     this.value = '';
                     
-                    // Зберігаємо новий коментар як об'єкт
                     savedComments.push({ text: text, time: timeString });
                     localStorage.setItem(storageKey, JSON.stringify(savedComments));
                 }
@@ -180,7 +157,6 @@ discussionPosts.forEach(function(currentPost, i) {
     }
 });
 
-// Функція тепер приймає параметр timeString
 function createCommentBox(text, timeString, prepBox, inputBox) {
     const userData = safeJSONParse('currentUser');
     let userName = "Ви";
@@ -194,8 +170,7 @@ function createCommentBox(text, timeString, prepBox, inputBox) {
     const newComment = document.createElement('div');
     newComment.className = 'post-item';
     
-    // Вставляємо змінну timeString туди, де раніше було жорстке слово "Щойно"
-    newComment.innerHTML = '<div class="start-prep"><img class="svg" src="Group 4.svg" alt="Аватар"><div class="user"><h3 class="name-1">' + userName + '</h3><h3 class="device-1">' + userDevice + '</h3></div></div><div class="content"><time class="time-pre">' + timeString + '</time><p class="content-1">' + text + '</p><div class="answers"><button class="reply-btn">↩</button></div></div>';
+    newComment.innerHTML = `<div class="start-prep"><img class="svg account-trigger" src="Group 4.svg" alt=""><div class="user"><h3 class="name-1">${userName}</h3><h3 class="device-1">${userDevice}</h3></div></div><div class="content"><time class="time-pre">${timeString}</time><p class="content-1">${text}</p><div class="answers"><button class="reply-btn">↩</button></div></div>`;
     
     prepBox.insertBefore(newComment, inputBox);
 }
@@ -208,8 +183,8 @@ if (authForm) {
     if (currentPage === 'account.html') {
         const userData = safeJSONParse('currentUser');
         if (userData) {
-            if (userData.nickname) inputs[0].value = userData.nickname;
-            if (userData.email) inputs[1].value = userData.email;
+            if (userData.nickname && inputs[0]) inputs[0].value = userData.nickname;
+            if (userData.email && inputs[1]) inputs[1].value = userData.email;
         }
     }
 

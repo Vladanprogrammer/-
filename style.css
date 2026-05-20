@@ -46,6 +46,7 @@ html{
     padding-left: 15px;
     gap: 20px;
     padding-top: 90px;
+    font: inherit;
 }
 .discussion-topic p {
     margin: 0;
@@ -432,7 +433,9 @@ time {
     display: flex;
     font: inherit;
     font-size: 40px;
-    padding-left: 440px;
+    padding-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 40px;
 }
 
 .main-news{
@@ -1067,4 +1070,121 @@ time {
     font-size: 16px;
     background-color: #f9f9f9;
     color: #000000;
+}
+
+.settings-layout {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "Manrope", sans-serif;
+    min-height: 70vh;
+}
+
+.settings-container {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.setting-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #000000;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+body.dark-theme {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .rectangle,
+body.dark-theme .menu,
+body.dark-theme .logo-departing,
+body.dark-theme .settings-container {
+    background-color: #1e1e1e !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .main-general,
+body.dark-theme .setting-label,
+body.dark-theme .text-menu,
+body.dark-theme .discussion-topic p a,
+body.dark-theme .footer-text p a,
+body.dark-theme .logo span {
+    color: #ffffff !important;
+}
+
+body.dark-theme .slider {
+    background-color: #444;
+}
+
+body.dark-theme input:checked + .slider {
+    background-color: #ffffff;
+}
+
+body.dark-theme input:checked + .slider:before {
+    background-color: #121212;
+}
+
+.cussion-todispic a.active-menu,
+.footer-text a.active-menu {
+    color: #007AFF !important;
+    font-weight: 700 !important;
 }

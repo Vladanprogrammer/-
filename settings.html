@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <title>Вхід в акаунт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=200..800&display=swap" rel="stylesheet">
+    <title>Налаштування</title>
 </head>
 <body>
     <nav class="menu">
@@ -24,7 +24,7 @@
             <p><a href="news.html">Новини</a></p>
         </div>
         <div class="footer-text">
-            <p><a href="settings.html">Налаштування</a></p>
+            <p><a href="settings.html" class="active-menu">Налаштування</a></p>
             <p><a href="feedback.html">Звʼязок</a></p>
         </div>
     </nav>
@@ -34,16 +34,14 @@
         <div class="logo">
             <a href="main.html"><span>M&L</span></a>
         </div>
-        <div>
-            <img class="account-trigger" src="img/Group 4.svg" alt="Аватар">
-        </div>
+        <div><img class="account-trigger" src="img/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар"></div>
     </div>
 
     <nav class="logo-departing">
         <div class="top-ghost">
-            <button class="rain" onclick="window.location.href='login.html'">Увійти</button>
-            <button class="reg" onclick="window.location.href='reg.html'">Зареєструватись</button>
-            <img class="ghost-log account-trigger" src="img/Group 4.svg" alt="Аватар">
+            <a href="login.html"><button class="rain">Увійти</button></a>
+            <a href="reg.html"><button class="reg">Зареєструватись</button></a>
+            <img class="ghost-log account-trigger" src="img/Знімок екрана 2026-04-13 о 01.09.58.png" alt="Аватар">
             <p class="ghost">Гість</p>
         </div>
         <div class="bottom-ghost">
@@ -52,21 +50,17 @@
         </div>
     </nav>
 
-    <h1 class="news-page-title">Вхід в M&L</h1>
+    <header class="main-general">Налаштування</header>
 
-    <main class="auth-layout">
-        <div class="auth-container">
-            <form id="login-form" class="auth-form">
-                <div class="form-group">
-                    <label class="form-label">Електронна пошта</label>
-                    <input type="email" class="form-input" placeholder="example@mail.com" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Пароль</label>
-                    <input type="password" class="form-input" placeholder="Введіть ваш пароль" required>
-                </div>
-                <button type="submit" class="auth-submit-btn">Увійти</button>
-            </form>
+    <main class="settings-layout">
+        <div class="settings-container">
+            <div class="setting-item">
+                <span class="setting-label">Темна тема</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
     </main>
 
@@ -75,6 +69,6 @@
     </footer>
 
     <script src="global.js"></script>
-    <script src="login.js"></script>
+    <script src="settings.js"></script>
 </body>
 </html>
