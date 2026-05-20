@@ -345,11 +345,18 @@ time {
     justify-content: space-between;
 }
 
-.full .content .answers,
-.custom-created-post .content .answers {
+.full .content .answers {
     display: flex !important;
     justify-content: flex-end !important;
     width: 100%;
+}
+
+.custom-created-post > .content > .answers {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100%;
+    position: relative !important;
+    top: 55px !important;
 }
 
 .reply-btn{
