@@ -16,7 +16,7 @@ html{
     top: 0;
     left: -100%;
     height: 100vh;
-    z-index: 1000;
+    z-index: 998;
     transition: left 0.3s ease;
     font: inherit;
 }
@@ -818,26 +818,23 @@ time {
     flex-wrap: nowrap;
 }
 
-/* Робимо панель гнучкою, щоб елементи стояли в один ряд */
 .controls-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px; /* Відстань між пошуком і плюсом */
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-/* Пошук займає весь вільний простір */
 .search-container {
     flex-grow: 1;
 }
 
-/* Фіксуємо кнопку +, щоб вона не зжималась і не падала вниз */
 .plus {
     flex-shrink: 0; 
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* Робить її круглою, якщо треба квадратну - прибери це */
+    border-radius: 50%;
     background-color: #000000;
     color: #ffffff;
     font-size: 24px;
@@ -1152,41 +1149,98 @@ input:checked + .slider:before {
 
 body.dark-theme {
     background-color: #121212 !important;
-    color: #ffffff !important;
+    color: #E0E0E0 !important;
+}
+
+html:has(body.dark-theme) {
+    background-color: #121212 !important;
 }
 
 body.dark-theme .rectangle,
+body.dark-theme .top-ghost,
+body.dark-theme .bottom-ghost {
+    background-color: #1E1E1E !important;
+    border-bottom: 1px solid #333333 !important;
+}
+
 body.dark-theme .menu,
-body.dark-theme .logo-departing,
-body.dark-theme .settings-container {
-    background-color: #1e1e1e !important;
-    border-color: #ffffff !important;
-    color: #ffffff !important;
+body.dark-theme .menu.active {
+    background-color: #1E1E1E !important;
+    border-right: 1px solid #333333 !important;
 }
 
-body.dark-theme .main-general,
-body.dark-theme .setting-label,
-body.dark-theme .text-menu,
-body.dark-theme .discussion-topic p a,
-body.dark-theme .footer-text p a,
-body.dark-theme .logo span {
-    color: #ffffff !important;
+body.dark-theme .menu *,
+body.dark-theme .ham-menu,
+body.dark-theme .discussion-topic,
+body.dark-theme .footer-text {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #E0E0E0 !important;
+    border-color: #333333 !important;
 }
 
-body.dark-theme .slider {
-    background-color: #444;
+body.dark-theme .content-1,
+body.dark-theme .mn-news,
+body.dark-theme .category-box,
+body.dark-theme .preparation,
+body.dark-theme .full {
+    background-color: #242424 !important;
+    border: 1px solid #333333 !important;
+    color: #E0E0E0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
-body.dark-theme input:checked + .slider {
-    background-color: #ffffff;
+body.dark-theme .post-item {
+    border-bottom: 1px solid #333333 !important;
+}
+body.dark-theme .post-item-fat-inline {
+    border-bottom: 3px solid #333333 !important;
 }
 
-body.dark-theme input:checked + .slider:before {
-    background-color: #121212;
+body.dark-theme .reply-input,
+body.dark-theme .new-post-input,
+body.dark-theme .search-input {
+    background-color: #121212 !important;
+    border: 1px solid #444444 !important;
+    color: #E0E0E0 !important;
 }
 
-.cussion-todispic a.active-menu,
-.footer-text a.active-menu {
-    color: #007AFF !important;
-    font-weight: 700 !important;
+body.dark-theme .reply-input:focus,
+body.dark-theme .new-post-input:focus {
+    border-color: #5E92F3 !important;
+}
+
+body.dark-theme .reply-btn,
+body.dark-theme .answer-1,
+body.dark-theme .learn-more,
+body.dark-theme .menu-active-link,
+body.dark-theme .page-link,
+body.dark-theme .rain,
+body.dark-theme .reg {
+    color: #7AA2F7 !important; 
+}
+
+body.dark-theme .time-pre,
+body.dark-theme time,
+body.dark-theme .device-1,
+body.dark-theme .category-box-title {
+    color: #AAAAAA !important;
+    border-color: #444444 !important;
+}
+
+body.dark-theme .plus,
+body.dark-theme .auth-submit-btn {
+    background-color: #E0E0E0 !important;
+    color: #121212 !important;
+}
+
+body.dark-theme .plus:hover,
+body.dark-theme .auth-submit-btn:hover {
+    background-color: #FFFFFF !important;
+}
+
+body.dark-theme .back-to-top {
+    background-color: #1E1E1E !important;
+    border-color: #444444 !important;
+    color: #E0E0E0 !important;
 }
