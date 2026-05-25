@@ -270,9 +270,6 @@ html{
     padding: 20px 0;
     border-bottom: 1px solid #000;
 }
-.post-item-fat-inline{
-    border-bottom: 3px solid #000;
-}
 
 .start{
     display: flex;
@@ -510,12 +507,6 @@ time {
         padding: 0px 0px 10px 20px;
     }
 
-    .guest{
-        padding: 0 10px 0 0;
-        height: 50px;
-        width: 50px;
-    }
-
     .main-general{
          font-weight: normal;
          font-size: 30px;
@@ -532,7 +523,7 @@ time {
         text-align: left;
     }
 
-    .post-item, .post-item-fat-inline{
+    .post-item{
         flex-direction: column;
         gap: 0;
         padding: 0;
@@ -812,18 +803,11 @@ time {
 .controls-bar {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-    flex-wrap: nowrap;
-}
-
-.controls-bar {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 20px;
+    flex-wrap: nowrap;
 }
 
 .search-container {
@@ -1193,9 +1177,6 @@ body.dark-theme .full {
 body.dark-theme .post-item {
     border-bottom: 1px solid #333333 !important;
 }
-body.dark-theme .post-item-fat-inline {
-    border-bottom: 3px solid #333333 !important;
-}
 
 body.dark-theme .reply-input,
 body.dark-theme .new-post-input,
@@ -1274,10 +1255,11 @@ body.dark-theme .content-1 {
 }
 
 body.dark-theme .svg, 
-body.dark-theme .guest,
+body.dark-theme .ghost,
 body.dark-theme .account-trigger {
-    background-color: #444444 !important;
-    border-radius: 50% !important;
-    fill: #E0E0E0 !important;
-    color: #E0E0E0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    filter: invert(0.8) !important;
 }
