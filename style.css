@@ -1244,3 +1244,40 @@ body.dark-theme .back-to-top {
     border-color: #444444 !important;
     color: #E0E0E0 !important;
 }
+
+body.dark-theme .search-container {
+    border: 1px solid #666666 !important; 
+    background-color: transparent !important;
+}
+
+body.dark-theme .search-input {
+    color: #E0E0E0 !important;
+}
+
+body.dark-theme .filter-btn,
+body.dark-theme .filter-select {
+    border: 1px solid #666666 !important;
+    color: #E0E0E0 !important;
+    background-color: transparent !important;
+}
+
+body.dark-theme .filter-btn:hover,
+body.dark-theme .filter-select:hover {
+    border-color: #E0E0E0 !important;
+}
+
+body.dark-theme .content-1 {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.dark-theme .svg, 
+body.dark-theme .guest,
+body.dark-theme .account-trigger {
+    background-color: #444444 !important;
+    border-radius: 50% !important;
+    fill: #E0E0E0 !important;
+    color: #E0E0E0 !important;
+}
